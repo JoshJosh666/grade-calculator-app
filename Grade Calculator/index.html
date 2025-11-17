@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Grade Calculator — Portfolio App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>Grade Calculator</h1>
+        <p class="lead">Add subjects (score + weight) to compute a weighted semester grade. Export results as CSV.</p>
+      </div>
+      <div class="muted" style="display: flex; align-items: center; gap: 16px;">
+        <span>Portfolio app • No backend</span>
+        <button id="themeToggle" title="Toggle theme" class="btn ghost" style="padding: 6px 10px; line-height: 1;">🌙</button>
+      </div>
+    </header>
+
+    <div class="card" id="app">
+      <!-- Controls -->
+      <div class="controls">
+        <div>
+          <label>Default Total Weight</label>
+          <select id="defaultWeight" aria-label="default weight">
+            <option value="100">100 (percent)</option>
+            <option value="1">1 (use raw averages)</option>
+          </select>
+        </div>
+        <div>
+          <label>Grade Scale</label>
+          <select id="gradeScale">
+            <option value="standard">Standard A:90 B:80 C:70 D:60 F:&lt;60</option>
+            <option value="plusminus">Plus/minus (A:93 A-:90 ...)</option>
+          </select>
+        </div>
+        <div style="align-self:end;display:flex;gap:8px">
+          <button class="btn" id="addRow">+ Add subject</button>
+          <button class="ghost" id="clearAll">Clear</button>
+          <button class="ghost" id="generateExample">Example</button>
+        </div>
+      </div>
+
+      <!-- Table header -->
+      <div class="grid header">
+        <div>Subject</div>
+        <div class="right">Score</div>
+        <div class="right">Weight</div>
+        <div></div>
+      </div>
+
+      <!-- Subjects container -->
+      <div id="subjectsList">
+        <!-- JS will populate rows -->
+      </div>
+
+      <!-- Card Footer -->
+      <div class="card-footer">
+        <div class="result-display">
+          <div class="result-item">
+            <div class="muted">Weighted Avg.</div>
+            <div class="big" id="weightedAvg">—</div>
+          </div>
+          <div class="result-item">
+            <div class="muted">Letter Grade</div>
+            <span class="letter" id="letterGrade">—</span>
+          </div>
+        </div>
+
+        <div class="summary-actions">
+          <div class="muted">Total weight: <span id="totalWeight">0</span></div>
+          <div class="muted">Subjects: <span id="countSubjects">0</span></div>
+          <a class="csv-link" id="exportCSV" href="#">Export CSV</a>
+        </div>
+      </div>
+
+      <p class="small muted" style="margin-top:18px; text-align: center;">
+        Tip: If your weights don't add to 100, the app will normalize them when calculating the weighted average.
+      </p>
+    </div>
+
+    <footer style="text-align:center;margin-top:18px;font-size:13px;color:var(--muted)">
+      © <span id="year"></span> Grade Calculator — Portfolio
+    </footer>
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
