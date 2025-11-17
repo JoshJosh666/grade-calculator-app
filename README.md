@@ -15,17 +15,6 @@ Perfect for students or anyone who wants a fast, offline grade checker.
 
 ---
 
-## 🚀 Live Demo
-(If you upload to GitHub Pages, put the link here)  
-Example: `https://yourusername.github.io/grade-calculator-app/`
-
----
-
-## 📸 Screenshots
-(Add screenshots here, e.g. `/screenshots/preview.png`)
-
----
-
 ## 🔧 Features
 
 ### ✅ Grade Input
@@ -64,10 +53,9 @@ Example: `https://yourusername.github.io/grade-calculator-app/`
 ---
 
 ## 🛠 Technologies Used
-- **HTML5**
-- **CSS3**
-- **Vanilla JavaScript**
-- LocalStorage API
+- **HTML**
+- **CSS**
+- **JavaScript**
 
 ---
 
